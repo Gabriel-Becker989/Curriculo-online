@@ -1,0 +1,77 @@
+/* Estilização geral do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define uma fonte padrão e amigável */
+    background-color: #f4f4f4; /* Um fundo cinza claro para suavizar a aparência */
+    color: #333; /* Cor de texto principal, um cinza escuro */
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza todo o conteúdo da página */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilização da imagem de perfil */
+img[alt="Imagem de rosto"] {
+    width: 150px; /* Define uma largura fixa */
+    height: 150px; /* Define uma altura fixa para garantir a proporção */
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+    border: 5px solid #fff; /* Adiciona uma borda branca elegante */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Uma sombra sutil para dar profundidade */
+}
+
+/* Estilização dos títulos */
+h1, h2 {
+    color: #0056b3; /* Uma cor azul para os títulos para dar destaque */
+}
+
+h1 {
+    font-size: 2.5em; /* Tamanho maior para o título principal */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em; /* Tamanho um pouco menor para os subtítulos */
+    border-bottom: 2px solid #ddd; /* Uma linha sutil abaixo dos subtítulos */
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Estilização do parágrafo de introdução */
+p {
+    max-width: 600px; /* Limita a largura do parágrafo para melhor leitura */
+    font-size: 1.1em;
+}
+
+/* Estilização da lista de redes sociais */
+ul {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding: 0; /* Remove o preenchimento padrão */
+}
+
+li {
+    margin: 15px 0; /* Adiciona espaçamento entre os itens da lista */
+    font-size: 1.1em;
+}
+
+/* Estilização dos links e ícones */
+li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #333; /* Cor do texto do link */
+    display: inline-flex; /* Alinha o ícone e o texto verticalmente */
+    align-items: center;
+    transition: transform 0.3s; /* Adiciona uma transição suave para o efeito de passar o mouse */
+}
+
+li a:hover {
+    color: #007BFF; /* Muda a cor do link ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho para dar feedback */
+}
+
+li img {
+    width: 25px; /* Define o tamanho dos ícones */
+    height: 25px;
+    margin-right: 10px; /* Adiciona um espaço entre o ícone e o texto */
+    vertical-align: middle; /* Alinha o ícone verticalmente com o texto */
+}
