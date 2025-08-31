@@ -1,27 +1,48 @@
-/* Configurações do css */
+/* Variáveis Globais */
+:root {
+    --primary: #0056b3;
+    --primary-dark: #003d82;
+    --header-bg: #fff;
+    --header-border: #0056b3;
+    --body-bg: #f9f9f9;
+    --card-bg: #f9f9f9;
+    --card-border: #ddd;
+    --card-shadow: rgba(0,0,0,0.08);
+    --card-shadow-hover: rgba(0,0,0,0.12);
+    --text-main: #333;
+    --text-secondary: #555;
+    --footer-bg: #003366;
+    --footer-btn-bg: #fff;
+    --footer-btn-hover: #f0f4f8;
+    --section-bg: #fff;
+    --section-light-bg: #f0f4f8;
+    --border-light: #e0e0e0;
+    --success: #28a745;
+    --warning: #ffc107;
+    --disabled: #a9a9a9;
+}
+
+/* Reset e Base */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
+    background: var(--body-bg);
 }
 
-/* Container principal do Header */
+/* Cabeçalho */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid #0056b3;
+    background: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--header-border);
 }
-
-/* Parte Esquerda: Foto e Nome */
 .logo-container {
     display: flex;
     align-items: center;
 }
-
 .profile-photo {
     width: 60px;
     height: 60px;
@@ -29,14 +50,13 @@ body {
     object-fit: cover;
     margin-right: 15px;
 }
-
 .developer-name {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: var(--text-main);
 }
 
-/* Parte Central: Navegação */
+/* Navegação */
 .main-nav ul {
     margin: 0;
     padding: 0;
@@ -44,20 +64,17 @@ body {
     display: flex;
     gap: 30px;
 }
-
 .main-nav a {
     text-decoration: none;
-    color: #555;
+    color: var(--text-secondary);
     font-weight: 600;
     padding: 10px 5px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
-
 .main-nav a:hover {
-    color: #0056b3;
+    color: var(--primary);
 }
-
 .main-nav a::after {
     content: '';
     position: absolute;
@@ -65,15 +82,14 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #0056b3;
-    transition: width 0.3s ease;
+    background: var(--primary);
+    transition: width 0.3s;
 }
-
 .main-nav a:hover::after {
     width: 100%;
 }
 
-/* Parte Direita: Contato */
+/* Header do contato */
 .contact-info {
     display: flex;
     align-items: center;
@@ -82,38 +98,35 @@ body {
     color: #444;
 }
 
-/* Estilo padrão do começo das páginas */
+/* Estilo do começo das páginas */
 .intro-section {
-    background-color: #f0f4f8;
-    padding: 80px 40px; /* Padding vertical aumentado para dar mais respiro */
+    background: var(--section-light-bg);
+    padding: 80px 40px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 250px; /* Altura mínima para garantir um bom tamanho, mas flexível */
+    min-height: 250px;
 }
-
 .intro-section h1 {
     font-size: 3em;
-    color: #0056b3;
+    color: var(--primary);
     margin: 0 0 15px 0;
 }
-
 .intro-section .subtitle {
     font-size: 1.2em;
-    color: #555;
+    color: var(--text-secondary);
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.7;
 }
 
-
-/* Estilo da Seção de Cards (Página Inicial) */
-.cards-section {
+/* Estilo dos cards */
+.cards-section,
+.content-section {
     padding: 60px 40px;
-    background-color: #ffffff;
+    background: var(--section-bg);
 }
-
 .cards-container {
     display: flex;
     justify-content: center;
@@ -122,115 +135,105 @@ body {
     max-width: 1100px;
     margin: 0 auto;
 }
-
 .card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 10px;
     padding: 30px;
     text-align: center;
     width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px var(--card-shadow-hover);
 }
-
 .card h3 {
     margin-top: 0;
     font-size: 1.5em;
-    color: #0056b3;
+    color: var(--primary);
 }
-
 .card p {
     font-size: 1em;
     line-height: 1.6;
-    color: #555;
+    color: var(--text-secondary);
     min-height: 100px;
 }
-
 .card-button {
     display: inline-block;
     text-decoration: none;
-    background-color: #0056b3;
-    color: #ffffff;
+    background: var(--primary);
+    color: #fff;
     padding: 12px 25px;
     border-radius: 5px;
     font-weight: bold;
     margin-top: 15px;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
 }
-
 .card-button:hover {
-    background-color: #003d82;
+    background: var(--primary-dark);
+}
+.card-button.disabled,
+.card-button.disabled:hover {
+    background: var(--disabled);
+    cursor: not-allowed;
 }
 
-/* Estilos da Página Sobre Mim */
+/* Estilo das listas */
 .card-list {
     list-style: none;
     padding: 0;
     text-align: left;
     margin-top: 20px;
 }
-
 .card-list li {
     padding: 8px 0;
-    border-bottom: 1px solid #e0e0e0;
-    color: #333;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-main);
 }
-
 .card-list li:last-child {
     border-bottom: none;
 }
 
-/* Estilos da Página Formação */
-.content-section {
-    padding: 60px 40px;
-    background-color: #ffffff;
-}
-
+/* Container */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Cards de  formação */
 .education-card {
-    background-color: #fff;
+    background: #fff;
     border-radius: 8px;
     padding: 25px;
     width: 420px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid #0056b3;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .education-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
-
 .education-card h3 {
     margin-top: 0;
     font-size: 1.5em;
-    color: #333;
+    color: var(--text-main);
 }
-
 .education-card .institution {
     font-style: italic;
-    color: #555;
+    color: var(--text-secondary);
     margin: -10px 0 15px 0;
 }
-
 .education-card .date {
     font-weight: 600;
-    color: #333;
+    color: var(--text-main);
     margin-bottom: 20px;
 }
-
 .status {
     padding: 5px 12px;
     border-radius: 15px;
@@ -238,188 +241,156 @@ body {
     font-weight: bold;
     color: #fff;
 }
-
 .status.ongoing {
-    background-color: #ffc107;
-    color: #333;
+    background: var(--warning);
+    color: var(--text-main);
 }
-
 .status.completed {
-    background-color: #28a745;
+    background: var(--success);
 }
 
-/* Estilos para a Seção de Idiomas */
+/* Estilo de Idiomas e seus cards */
 .bg-light {
-    background-color: #f8f9fa; 
+    background: #f8f9fa;
 }
-
 .section-title {
     text-align: center;
     font-size: 2.2em;
-    color: #0056b3;
+    color: var(--primary);
     margin-bottom: 50px;
     position: relative;
     padding-bottom: 15px;
 }
-
 .language-card {
-    background-color: #fff;
+    background: #fff;
     border-radius: 8px;
     padding: 30px;
     width: 280px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
-    border-bottom: 5px solid #0056b3;
-    transition: transform 0.3s ease;
+    border-bottom: 5px solid var(--primary);
+    transition: transform 0.3s;
 }
-
 .language-card:hover {
     transform: translateY(-5px);
 }
-
 .language-card .language-name {
     font-size: 1.8em;
     font-weight: 600;
-    color: #333;
+    color: var(--text-main);
     margin: 0 0 10px 0;
 }
-
 .language-card .level {
     font-size: 1.1em;
-    color: #555;
+    color: var(--text-secondary);
     margin: 0;
     font-style: italic;
 }
 
-/* Estilos para a Página de Portfólio */
+/* Estilo dos cards de portfólio */
 .project-card {
-    background-color: #ffffff;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     width: 380px;
     display: flex;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-
 .project-content {
     padding: 30px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
-
 .project-content h3 {
     margin-top: 0;
     font-size: 1.6em;
-    color: #0056b3;
+    color: var(--primary);
 }
-
 .project-content p {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.6;
     flex-grow: 1;
     margin-bottom: 20px;
 }
 
-.card-button.disabled {
-    background-color: #a9a9a9;
-    cursor: not-allowed;
-}
-
-.card-button.disabled:hover {
-    background-color: #a9a9a9;
-}
-
-/* Estilos da Página de Contato */
-
+/* Formulário de Contato */
 .contact-form {
-    max-width: 700px; /* Define uma largura máxima para o formulário */
-    margin: 0 auto; /* Centraliza o formulário na seção */
-    background-color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
-
 .form-group {
     margin-bottom: 20px;
 }
-
 .form-group label {
-    display: block; /* Faz o label ocupar uma linha inteira */
+    display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #333;
+    color: var(--text-main);
 }
-
 .form-group input,
 .form-group textarea {
-    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    font-family: inherit;
+    box-sizing: border-box;
 }
-
 .form-group textarea {
-    resize: vertical; /* Permite que o usuário redimensione a altura do campo de mensagem */
+    resize: vertical;
 }
 
-/* Estilos do Rodapé  */
-
-
-.main-footer {
-    background-color: #003366;
-    padding: 20px 40px;
-    margin-top: 40px;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px; /* Espaço entre os botões */
-}
-
-/* Ajuste no botão dentro do footer para melhor contraste */
-.main-footer .card-button {
-    background-color: #ffffff;
-    color: #003366;
-    font-weight: bold;
-    border: 2px solid transparent;
-}
-
-.main-footer .card-button:hover {
-    background-color: #f0f4f8;
-    border: 2px solid #ffffff;
-    color: #003366;
-}
-
-/* --- Estilo do Botão de Enviar do Formulário --- */
+/* Botão enviar do formulário */
 .submit-button {
-    display: block; /* Para ocupar a largura total e centralizar */
-    width: auto; /* Ajusta a largura ao conteúdo */
-    margin: 20px auto 0 auto; /* Centraliza horizontalmente e adiciona margem superior */
+    display: block;
+    width: auto;
+    margin: 20px auto 0 auto;
     padding: 12px 30px;
-    background-color: #0056b3;
-    color: #ffffff;
+    background: var(--primary);
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
+}
+.submit-button:hover {
+    background: var(--primary-dark);
 }
 
-.submit-button:hover {
-    background-color: #003d82; /* Cor mais escura no hover */
+/* Rodapé */
+.main-footer {
+    background: var(--footer-bg);
+    padding: 20px 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.main-footer .card-button {
+    background: var(--footer-btn-bg);
+    color: var(--footer-bg);
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+.main-footer .card-button:hover {
+    background: var(--footer-btn-hover);
+    border: 2px solid var(--footer-btn-bg);
+    color: var(--footer-bg);
 }
